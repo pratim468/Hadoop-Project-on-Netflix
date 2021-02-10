@@ -1,0 +1,125 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources,
+# the channels and the sinks.
+# Sources, channels and sinks are defined per hdfs-agent,
+# in this case called 'hdfs-agent'
+
+hdfs-agent.sources =hdfs-source
+hdfs-agent.channels = memchannel
+hdfs-agent.sinks =hdfs-write
+
+# For each one of the sources, the type is defined
+hdfs-agent.sources.hdfs-source.type = netcat
+hdfs-agent.sources.hdfs-source.bind = localhost
+hdfs-agent.sources.hdfs-source.port = 22222
+
+
+# Each sink's type must be defined
+hdfs-agent.sinks.hdfs-write.type = hdfs
+hdfs-agent.sinks.hdfs-write.hdfs.path=hdfs://localhost:9000/flume-demo/
+hdfs-agent.sinks.hdfs-write.hdfs.roll.Interval=30
+hdfs-agent.sinks.hdfs-write.hdfs.writeFormat=Text
+hdfs-agent.sinks.hdfs-write.hdfs.fileType=DataStream
+
+# The channel can be defined as follows.
+hdfs-agent.sources.hdfs-source.channels = memchannel
+
+
+#Specify the channel the sink should use
+hdfs-agent.sinks.hdfs-write.channel = memchannel
+
+# Each channel's type is defined.
+hdfs-agent.channels.memchannel.type = memory
+
+# Other config values specific to each type of channel(sink or source)
+# can be defined as well
+# In this case, it specifies the capacity of the memory channel
+hdfs-agent.channels.memchannel.capacity = 10000
+
+--000000000000fcf57d05a6066703
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" cla=
+ss=3D"gmail_attr">---------- Forwarded message ---------<br>From: <strong c=
+lass=3D"gmail_sendername" dir=3D"auto">Shivani</strong> <span dir=3D"auto">=
+&lt;<a href=3D"mailto:shivaniroy604@gmail.com">shivaniroy604@gmail.com</a>&=
+gt;</span><br>Date: Mon, 18 May 2020, 11:23 pm<br>Subject: <br>To: vinay ku=
+mar &lt;<a href=3D"mailto:vinayvkc678@gmail.com">vinayvkc678@gmail.com</a>&=
+gt;<br></div><br><br><div dir=3D"ltr"><div dir=3D"ltr"><div><div style=3D"w=
+idth:1326px"><div><div style=3D"height:627px;width:1326px"><div style=3D"wi=
+dth:1314px"><div style=3D"width:1314px"><div style=3D"height:1016px"><div s=
+tyle=3D"padding-bottom:56px"><div dir=3D"ltr" style=3D"outline:none;width:1=
+002px;height:auto"><pre># Licensed to the Apache Software Foundation (ASF) =
+under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# &quot;License&quot;); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  <a href=3D"http://www.apache.org/licenses/LICENSE-2.0" target=3D"_blank"=
+ rel=3D"noreferrer">http://www.apache.org/licenses/LICENSE-2.0</a>
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources,=20
+# the channels and the sinks.
+# Sources, channels and sinks are defined per hdfs-agent,=20
+# in this case called &#39;hdfs-agent&#39;
+
+hdfs-agent.sources =3Dhdfs-source
+hdfs-agent.channels =3D memchannel
+hdfs-agent.sinks =3Dhdfs-write
+
+# For each one of the sources, the type is defined
+hdfs-agent.sources.hdfs-source.type =3D netcat
+hdfs-agent.sources.hdfs-source.bind =3D localhost
+hdfs-agent.sources.hdfs-source.port =3D 22222
+
+
+# Each sink&#39;s type must be defined
+hdfs-agent.sinks.hdfs-write.type =3D hdfs
+hdfs-agent.sinks.hdfs-write.hdfs.path=3Dhdfs://localhost:9000/flume-demo/
+hdfs-agent.sinks.hdfs-write.hdfs.roll.Interval=3D30
+hdfs-agent.sinks.hdfs-write.hdfs.writeFormat=3DText
+hdfs-agent.sinks.hdfs-write.hdfs.fileType=3DDataStream
+
+# The channel can be defined as follows.
+hdfs-agent.sources.hdfs-source.channels =3D memchannel
+
+
+#Specify the channel the sink should use
+hdfs-agent.sinks.hdfs-write.channel =3D memchannel
+
+# Each channel&#39;s type is defined.
+hdfs-agent.channels.memchannel.type =3D memory
+
+# Other config values specific to each type of channel(sink or source)
+# can be defined as well
+# In this case, it specifies the capacity of the memory channel
+hdfs-agent.channels.memchannel.capacity =3D 10000

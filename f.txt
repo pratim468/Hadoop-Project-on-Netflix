@@ -1,0 +1,35 @@
+cd /usr/share/hadoop
+hadoop namenode -format
+start-all.sh
+hadoop fs -mkdir /data
+
+sudo gedit .bashrc
+source .bashrc
+cd /usr/lib/apache-flume-1.6.0-bin
+cd bin
+./flume-ng agent -n hdfs-agent -c conf -f ../conf/twitter.conf
+head -n 50000 a.csv | nc localhost 22222
+
+
+
+lst = LOAD '/data/FlumeData.1589817988088' USING PigStorage(',') AS (ID:Chararray,Name:Chararray,Sex:Chararray,Height:Chararray,Weight:Chararray,Team:Chararray,NOC:Chararray,Games:Chararray,Year:int,Season:Chararray,City:Chararray,Sport:Chararray,Event:Chararray,Medal:Chararray);
+
+
+1.list all athelete's name,team name and their game whose weight is between 170-180
+ 
+lst = LOAD '/data' USING PigStorage(',') AS (ID:Chararray,Name:Chararray,Sex:Chararray,Age:int,Height:Chararray,Weight:Chararray,Team:Chararray,NOC:Chararray,Games:Chararray,Year:int,Season:Chararray,City:Chararray,Sport:Chararray,Event:Chararray,Medal:Chararray);
+
+b = FOREACH lst GENERATE Name,Team,Sport,Weight;
+c = FILTER b BY (Weight>70) and (Weight<81);
+DUMP c;
+
+2.list all athelete's name who got either Gold or Bronze medal in descending order.
+lst1 = LOAD '/data' USING PigStorage(',') AS (ID:Chararray,Name:Chararray,Sex:Chararray,Age:int,Height:Chararray,Weight:Chararray,Team:Chararray,NOC:Chararray,Games:Chararray,Year:int,Season:Chararray,City:Chararray,Sport:Chararray,Event:Chararray,Medal:Chararray);
+
+bb = FOREACH lst1 GENERATE Name,Medal,City;
+cc = FILTER bb BY (Medal=='Gold');
+d = ORDER c By Name desc;
+DUMP d;
+
+
+

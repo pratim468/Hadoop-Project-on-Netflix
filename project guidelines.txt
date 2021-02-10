@@ -1,0 +1,56 @@
+1) Front page i will share in the google class room 
+Title of the project 
+
+2) Abstrat of the project: in a paragraph
+Project purpose (performing movie data analysis for identifying trending movies, actors, songs, ....) along with the tools used(hadoop, flume, hive, pig...)
+
+using these tools what you have done 
+
+flume you have used for loading the data (what data....?)
+pig for what? what analysis? what queries you want to answer?
+
+3)Implementation
+
+Screen shots 
+
+A) load the data into hdfs using flume
+
+first screen will be hadoop screen with jps command to check all services are running properly in hadoop
+
+create directory in hdfs screen
+
+flume command execution screen
+
+conf file screen
+
+after loading the data, in browser capture the flume files
+
+one sample data file
+
+
+B) copy the data into table using hive/hbase
+
+
+C) queries (questions) using pig/hive: (minimum 8)
+
+ i)extract movies having rating more than 5
+ answer this question using pig/hive
+capture the screen which does the above task
+output screen also capture
+
+ii)
+
+iii)
+.
+.
+...
+
+
+viii)
+
+
+
+
+
+
+
